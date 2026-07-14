@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+
+
+<div class="col-md-6">
+
+
+<div class="card shadow">
+
+
+<div class="card-body">
+
+
+<h3 class="text-center mb-4">
+Update Employee
+</h3>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+
+<label class="form-label">
+Name
+</label>
+
+<input type="text"
+name="name"
+value="{{ employee.name }}"
+class="form-control mb-3">
+
+
+
+<label class="form-label">
+Email
+</label>
+
+<input type="email"
+name="email"
+value="{{ employee.email }}"
+class="form-control mb-3">
+
+
+
+<label class="form-label">
+Phone
+</label>
+
+<input type="text"
+name="phone"
+value="{{ employee.phone }}"
+class="form-control mb-3">
+
+
+
+<label class="form-label">
+Department
+</label>
+
+<input type="text"
+name="department"
+value="{{ employee.department }}"
+class="form-control mb-3">
+
+
+
+<label class="form-label">
+Salary
+</label>
+
+<input type="number"
+name="salary"
+value="{{ employee.salary }}"
+class="form-control mb-3">
+
+
+
+<label class="form-label">
+Joining Date
+</label>
+
+<input type="date"
+name="joining_date"
+value="{{ employee.joining_date|date:'Y-m-d' }}"
+class="form-control mb-3">
+
+
+
+<button class="btn btn-warning w-100">
+Update Employee
+</button>
+
+
+
+</form>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}
