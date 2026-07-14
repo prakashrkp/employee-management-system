@@ -26,9 +26,10 @@ SECRET_KEY = 'django-insecure-x!%39965r$1e)9-hsn13#@7cg7i@(pu=c(g42g633v8heyyh2#
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'employee-management-system-1-jnh9.onrender.com'
+    'employee-management-system-aufw.onrender.com',
+    'localhost',
+    '127.0.0.1'
 ]
-
 
 # Application definition
 
