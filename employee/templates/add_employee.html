@@ -1,117 +1,69 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
-
 <div class="row justify-content-center">
-
-
 <div class="col-md-6">
-
-
 <div class="card shadow">
-
-
 <div class="card-body">
 
+<h3 class="text-center mb-4">Add Employee</h3>
 
-<h3 class="text-center mb-4">
-Add Employee
-</h3>
-
-
+{% if form.errors %}
+  <div class="alert alert-danger">
+    <strong>Please fix the following errors:</strong>
+    <ul class="mb-0">
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ field.label }}: {{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 
 <form method="POST">
-
 {% csrf_token %}
 
+<label class="form-label">Name</label>
+<input type="text" name="name" class="form-control mb-3"
+       value="{{ request.POST.name|default:'' }}"
+       placeholder="Enter employee name">
 
+<label class="form-label">Email</label>
+<input type="email" name="email" class="form-control mb-3"
+       value="{{ request.POST.email|default:'' }}"
+       placeholder="Enter email">
 
-<label class="form-label">
-Name
-</label>
+<label class="form-label">Phone</label>
+<input type="text" name="phone" class="form-control mb-3"
+       value="{{ request.POST.phone|default:'' }}"
+       placeholder="Enter phone number">
 
-<input type="text"
-name="name"
-class="form-control mb-3"
-placeholder="Enter employee name">
+<label class="form-label">Department</label>
+<input type="text" name="department" class="form-control mb-3"
+       value="{{ request.POST.department|default:'' }}"
+       placeholder="Enter department">
 
+<label class="form-label">Salary</label>
+<input type="number" name="salary" class="form-control mb-3"
+       value="{{ request.POST.salary|default:'' }}"
+       placeholder="Enter salary">
 
+<label class="form-label">Joining Date</label>
+<input type="date" name="joining_date" class="form-control mb-3"
+       value="{{ request.POST.joining_date|default:'' }}">
 
-<label class="form-label">
-Email
-</label>
-
-<input type="email"
-name="email"
-class="form-control mb-3"
-placeholder="Enter email">
-
-
-
-<label class="form-label">
-Phone
-</label>
-
-<input type="text"
-name="phone"
-class="form-control mb-3"
-placeholder="Enter phone number">
-
-
-
-<label class="form-label">
-Department
-</label>
-
-<input type="text"
-name="department"
-class="form-control mb-3"
-placeholder="Enter department">
-
-
-
-<label class="form-label">
-Salary
-</label>
-
-<input type="number"
-name="salary"
-class="form-control mb-3"
-placeholder="Enter salary">
-
-
-
-<label class="form-label">
-Joining Date
-</label>
-
-<input type="date"
-name="joining_date"
-class="form-control mb-3">
-
-
-
-<button class="btn btn-success w-100">
-Add Employee
-</button>
-
-
+<button class="btn btn-success w-100">Add Employee</button>
 
 </form>
 
-
 </div>
-
 </div>
-
-
 </div>
-
-
 </div>
-
-
 
 {% endblock %}

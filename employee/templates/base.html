@@ -95,6 +95,26 @@
             color: #4dabf7;
         }
 
+        /* Hiring banner */
+        .hiring-banner {
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            border-top: 2px solid #4dabf7;
+            border-bottom: 2px solid #4dabf7;
+        }
+
+        .hiring-banner .btn-hire {
+            background-color: #4dabf7;
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .hiring-banner .btn-hire:hover {
+            background-color: #2a8fdb;
+            transform: translateY(-2px);
+        }
+
         /* Dashboard */
         .dashboard-hero {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -164,8 +184,23 @@
 
 </div>
 
+<!-- We're Hiring Banner -->
+<div class="hiring-banner text-white py-4 mt-5">
+  <div class="container text-center">
+    <h5 class="fw-bold mb-2"><i class="bi bi-briefcase-fill me-2"></i>We're Hiring!</h5>
+    <p class="mb-3 small text-white-50">
+      Join Prakash Private Limited. We're looking for talented Python Full Stack Developers
+      to build great products with us. Send your resume and we'll get in touch.
+    </p>
+    <a href="mailto:kadambakudiprakash@gmail.com?subject=Job%20Application%20-%20Python%20Full%20Stack%20Developer"
+       class="btn btn-hire px-4">
+      <i class="bi bi-envelope-paper-fill me-2"></i>Send Your Resume
+    </a>
+  </div>
+</div>
+
 <!-- Footer -->
-<footer class="custom-footer mt-5 pt-5 pb-3">
+<footer class="custom-footer pt-5 pb-3">
   <div class="container">
     <div class="row text-center text-md-start">
 
