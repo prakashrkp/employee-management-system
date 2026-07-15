@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-x!%39965r$1e)9-hsn13#
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    'employee-management-system-1-jnh9.onrender.com',
+    'apex-it-solutions.onrender.com',
     'localhost',
     '127.0.0.1'
 ]
