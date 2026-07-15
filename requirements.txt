@@ -5,3 +5,5 @@ mysqlclient==2.2.8
 packaging==26.2
 sqlparse==0.5.5
 tzdata==2026.3
+psycopg2-binary
+dj-database-url
