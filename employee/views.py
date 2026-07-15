@@ -27,6 +27,8 @@ def employee_list(request):
         'employees':employees
     })
 
+from django.shortcuts import render, redirect
+from .form import EmployeeForm
 
 def add_employee(request):
 
@@ -36,12 +38,7 @@ def add_employee(request):
 
         if form.is_valid():
 
-            emp = form.save()
-
-            messages.success(
-                request,
-                f"Employee '{emp.name}' added successfully by {request.user.username}!"
-            )
+            form.save()
 
             return redirect('/employees/')
 
