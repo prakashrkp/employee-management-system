@@ -4,12 +4,13 @@ from .form import EmployeeForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib import messages
 
 # Create your views here.
 
 def dashboard(request):
     return render(request, 'dashboard.html')
-@login_required
+
 def employee_list(request):
 
     search = request.GET.get('search')
@@ -26,9 +27,7 @@ def employee_list(request):
         'employees':employees
     })
 
-from django.shortcuts import render, redirect
-from .form import EmployeeForm
-@login_required
+
 def add_employee(request):
 
     if request.method == 'POST':
@@ -37,7 +36,12 @@ def add_employee(request):
 
         if form.is_valid():
 
-            form.save()
+            emp = form.save()
+
+            messages.success(
+                request,
+                f"Employee '{emp.name}' added successfully by {request.user.username}!"
+            )
 
             return redirect('/employees/')
 
